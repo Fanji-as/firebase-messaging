@@ -2,10 +2,11 @@ import { cors } from "@elysiajs/cors";
 import { Elysia } from "elysia";
 import mongoose from "mongoose";
 import send from "./routes/send";
+import corsConfig from "./config/corsConfig";
 
 const app = new Elysia()
-  .use(cors())
-  .group("/notification", (app) => app.use(send));
+  .use(cors(corsConfig))
+  .group("/notification", (app) => app.use(send))
 
 const PORT = Bun.env.PORT || 3000;
 

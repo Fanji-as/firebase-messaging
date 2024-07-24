@@ -1,7 +1,8 @@
-import { cors } from "@elysiajs/cors";
+const corsConfig = {
+    origin: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials:true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  };
 
-export const corsConfig = cors ({
-  origin: '*',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
-});
+export default corsConfig;

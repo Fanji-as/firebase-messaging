@@ -6,7 +6,7 @@ const serviceAccount: ServiceAccount = {
   project_id: Bun.env.PROJECT_ID,
   private_key_id: Bun.env.PRIVATE_KEY_ID,
   private_key: JSON.parse(`"${Bun.env.PRIVATE_KEY}"`),
-  client_email:Bun.env.CLIENT_EMAIL,
+  client_email: Bun.env.CLIENT_EMAIL,
   client_id: Bun.env.CLIENT_ID,
   auth_url: Bun.env.AUTH_URL,
   token_url: Bun.env.TOKEN_URL,
@@ -18,7 +18,4 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-export const messaging = admin.messaging();
-export const auth = admin.auth()
 export { admin };
-
