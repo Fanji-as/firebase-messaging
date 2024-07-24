@@ -22,7 +22,7 @@ function App() {
             console.log('No registration token available. Request permission to generate one.');
           }
         } else {
-          console.log('Permission not granted for Notification');
+          console.log('Permission not granted for Notification');``
         }
       } catch (error) {
         console.error('An error occurred while retrieving token. ', error);
