@@ -16,7 +16,6 @@ export default new Elysia()
       };
 
       try {
-        await admin.messaging().send(message);
         
         await notificationSchema.create({
           type: body.type,
@@ -52,12 +51,12 @@ export default new Elysia()
   )
   .get(
     "/history",
-    async ({ body }) => {
+    async ({ query }) => {
       try {
         const history = await notificationSchema.find(
           {
-            user_id: body.user_id,
-            company_id: body.company_id
+            user_id: query.user_id,
+            company_id: query.company_id
           }
         ).sort({ timestamp: -1 });
 
@@ -72,8 +71,8 @@ export default new Elysia()
         summary: "get history",
         tags: ["Notifications"],
       },
-      body: t.Object({
-        user_id: t.String(),
+      query: t.Object({
+        user_id: t.Optional(t.String()),
         company_id: t.String()
       }),
     }

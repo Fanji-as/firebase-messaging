@@ -1,21 +1,71 @@
-# Backend Firebase Messaging
+    # Backend Project
 
-## Deskripsi Proyek
-Bagian backend dari proyek ini berfungsi untuk mengirim push notifications menggunakan Firebase Cloud Messaging. Backend ini dibangun menggunakan Bun dan Elysia, serta menggunakan Firebase Admin SDK untuk berinteraksi dengan layanan Firebase.
+    ## Deskripsi
+    This is a backend project using Elysia, Firebase Admin, and Mongoose. The project also uses TypeScript as the programming language.
 
-## Langkah Instalasi
-1. **Pindah ke direktori backend:**
-    ```bash
-    cd backend
-    ```
+    ## Directory Structure
+    Legal-Plus-FCM-Auth/
 
-2. **Install dependensi:**
-    ```bash
-    bun install
-    ```
+    ├── dist/
 
-3. **Jalankan server:**
-    ```bash
-    bun run src/index.ts
-    ```
- 
+    │ └── index.js
+
+    ├── node_modules
+
+    ├── src/
+
+    | ├── config
+
+    |  ├── corsConfig.ts
+
+    |  └── firebaseAdmin.ts
+
+    │ ├── models
+
+    |  └── Notification.ts
+
+    │ ├── routes
+
+    |  └── notification.ts
+
+    │ └── index.js
+
+    ├── package.json
+
+    └── other files
+
+
+    ## Requirements
+    - Bun
+    - Elysia
+    - TypeScript
+
+    ## Installation
+    1. Clone this repository:
+        ```sh
+        git clone <repository-url>
+        cd backend
+        ```
+
+    2. Install dependencies:
+        ```sh
+        bun install
+        ```
+
+    ## NPM Commands
+    - `build': Build the project using Bun.
+        ```sh
+        bun build src/index.ts --outdir dist --target bun
+        ```
+    - `start`: Run the project from the build output.
+        ```sh
+        bun run dist/index.js
+        ```
+    - `dev`: Run the project in development mode.
+        ```sh
+        bun run src/index.ts
+        ```
+    - `clean`: Remove the 'dist' directory.
+        ```sh
+        rm -rf dist
+        ```
